@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ionic | Tienda deportiva</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#inicio"><img src="img/logo.png" alt="Logo de Ionic"><span>Ionic</span></a>
+  <nav class="menu" aria-label="Menú principal">
+    <a href="#productos">Productos</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#motivacion">Motivación</a>
+    <button id="btnTema" class="icono" aria-label="Cambiar entre modo claro y oscuro" title="Modo claro / oscuro">🌓</button>
+    <select id="moneda" aria-label="Moneda"><option value="CRC">CRC ₡</option><option value="USD">USD $</option></select>
+    <button id="btnCarrito" class="icono" aria-label="Abrir carrito">🛒</button>
+    <button class="pill" id="contador" aria-label="Abrir carrito">Carrito: 0</button>
+  </nav>
+</header>
+
+<main id="inicio">
+  <p class="bienvenida"><strong>Bienvenido(a):</strong> Somos Ionic, tu tienda deportiva en línea. Encuentra suplementos, accesorios de entrenamiento, ropa y artículos deportivos para acompañar tu energía en cada entrenamiento. ⚡🏔️</p>
+
+  <section id="productos">
+    <h2>Productos deportivos</h2>
+    <div class="filtros">
+      <input id="buscar" type="search" placeholder="Buscar (ej. balón, pesas)" aria-label="Buscar producto">
+      <select id="categoria" aria-label="Categoría"><option value="Todas">Todas</option></select>
+      <select id="orden" aria-label="Ordenar">
+        <option value="">Ordenar</option><option value="asc">Precio: menor a mayor</option>
+        <option value="desc">Precio: mayor a menor</option><option value="nombre">Nombre A-Z</option>
+      </select>
+      <label class="rango">Hasta: <span id="precioMax"></span>
+        <input id="rango" type="range" min="5000" max="25000" step="1000" value="25000">
+      </label>
+    </div>
+    <div id="lista" class="grid"></div>
+  </section>
+
+  <section id="nosotros" class="bloque"><h2>Nosotros</h2>
+    <p>En Ionic creemos que el deporte se construye día a día. Por eso reunimos en un solo lugar lo que necesitas para entrenar, moverte y superarte.</p>
+  </section>
+
+  <section id="motivacion" class="bloque frase"><h2>Motivación</h2>
+    <blockquote>"No te midas solo por las medallas que cuelgan en la pared, sino por las veces que te levantaste cuando tus piernas no podían más, por las horas de entrenamiento cuando nadie te veía, por las lágrimas que convertiste en sudor y por la valentía de seguir adelante incluso cuando el camino se sentía demasiado pesado; porque el verdadero triunfo no está en llegar primero, sino en descubrir de qué eres capaz cuando decides no rendirte jamás, porque cada paso, cada caída y cada victoria construyen la persona que estás destinado a ser."</blockquote>
+  </section>
+</main>
+
+<footer class="pie">© 2026 Ionic - Tienda deportiva</footer>
+
+<div id="velo" hidden></div>
+<aside id="panel" aria-label="Carrito" aria-hidden="true">
+  <div class="panel-top"><img src="img/logo.png" alt=""><strong>Carrito</strong><button id="cerrar" class="icono" aria-label="Cerrar carrito">✕</button></div>
+  <div id="items"></div>
+  <div class="panel-pie"><strong id="total">Total: ₡0</strong><button id="vaciar" class="btn rojo">Vaciar carrito</button></div>
+</aside>
+<div id="aviso" role="status"></div>
+<script src="app.js"></script>
+</body>
+</html>
